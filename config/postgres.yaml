@@ -1,0 +1,4 @@
+url: postgres://pe:123456@127.0.0.1:5432/pe
+max_connections: 20
+min_connections: 20
+connect_timeout: 10

@@ -1,0 +1,3 @@
+db_file_path: data/pe.db
+max_connections: 20
+connect_timeout: 10

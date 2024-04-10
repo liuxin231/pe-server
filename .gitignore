@@ -1,0 +1,24 @@
+Cargo.lock
+log
+data
+test
+target
+debug/
+target/
+
+# MacOS
+.DS_Store
+
+# Project
+logs/
+log/
+**/*.tar.gz
+
+# vscode
+.vscode/
+
+# IntelliJ IDEA
+.idea
+*.iws
+*.iml
+*.ipr

@@ -1,0 +1,30 @@
+refresh_rate: 30 seconds
+loggers:
+  sqlx::query:
+    level: warn
+appenders:
+  stdout:
+    encoder:
+      pattern: "[{d(%Y-%m-%d %H:%M:%S)} {h({l})} {t}:{L}] {m}{n}"
+    kind: console
+  file:
+    kind: rolling_file
+    path: "log/service.log"
+    append: true
+    encoder:
+      pattern: "[{d(%Y-%m-%d %H:%M:%S)} {l} {t}:{L}] {m}{n}"
+    policy:
+      kind: compound
+      trigger:
+        kind: size
+        limit: 10 mb
+      roller:
+        kind: fixed_window
+        pattern: "log/service.log.{}"
+        base: 1
+        count: 9
+
+root:
+  level: info
+  appenders:
+    - stdout
